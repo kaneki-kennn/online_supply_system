@@ -101,11 +101,3 @@ def forgot(request):
 def signout(request):
     pass
 
-
-def history(request):
-    return render(request, 'accounts/User/history.html')
-
-
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
