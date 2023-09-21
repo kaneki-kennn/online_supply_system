@@ -91,5 +91,12 @@ def login(request):
 def signout(request):
     pass
 
+<<<<<<< HEAD
 def notification(request):
     return render(request, 'accounts/User/notification.html')
+=======
+
+
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
+>>>>>>> a90c159e000e5ce5a5fa898816c846d9d684a355
