@@ -10,9 +10,8 @@ urlpatterns = [
    path('register/',views.register, name='register'),
    path('forgot/',views.forgot),
    path('login/',views.login, name='login'),
-<<<<<<< HEAD
+
    path('history/',views.history, name='history'),
-=======
+
    path('about/',views.about, name='about'),
->>>>>>> 380335de494e46d42982c3438089ba3f3a36e36f
 ]
