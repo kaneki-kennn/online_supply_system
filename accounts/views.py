@@ -101,5 +101,12 @@ def forgot(request):
 def signout(request):
     pass
 
+<<<<<<< HEAD
 def history(request):
     return render(request, 'accounts/User/history.html')
+=======
+
+def about(request):
+    return render(request, 'accounts/User/about.html')
+
+>>>>>>> 380335de494e46d42982c3438089ba3f3a36e36f

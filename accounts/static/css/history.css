@@ -361,7 +361,7 @@
   .arrow_img {
     height: 20px;
     width: 20px;
-    position:;
+    position:sticky;
   }
 .purchase-request-no-0000100,
 .purchase-request-no-0000100 * {
