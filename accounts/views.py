@@ -104,15 +104,6 @@ def signout(request):
     pass
 
 
-<<<<<<< HEAD
 
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
-=======
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
-def history(request):
-    return render(request, 'accounts/User/history.html')
-
->>>>>>> f2099ab3e16aacd6734f1eee8ed4f34802eaeab0
