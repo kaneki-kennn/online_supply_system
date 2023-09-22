@@ -103,16 +103,5 @@ def verify(request):
 def signout(request):
     pass
 
-<<<<<<< HEAD
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
-def history(request):
-    return render(request, 'accounts/User/history.html')
-
-def tracker(request):
-    return render(request, 'accounts/User/tracker.html')
-=======
 def notification(request):
     return render(request, 'accounts/User/notification.html')
->>>>>>> 0ea241cf795d1b27d6bc8a3490860ba55f0c4889
