@@ -19,9 +19,9 @@ def home(request):
     declined = status.filter(status='Declined').count()
 
     context = {'requester':requester, 'status': status, 
-               'total_requester':  total_requester,
-               'total_status': total_status,'approved': approved,
-                 'pending': pending,'declined': declined}
+    'total_requester':  total_requester,
+    'total_status': total_status,'approved': approved,
+    'pending': pending,'declined': declined}
 
     return render(request, 'accounts/User/dashboard.html', context)   
 
@@ -103,6 +103,7 @@ def verify(request):
 def signout(request):
     pass
 
+<<<<<<< HEAD
 def about(request):
     return render(request, 'accounts/User/about.html')
 
@@ -111,3 +112,7 @@ def history(request):
 
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
+=======
+def notification(request):
+    return render(request, 'accounts/User/notification.html')
+>>>>>>> 0ea241cf795d1b27d6bc8a3490860ba55f0c4889
