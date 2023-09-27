@@ -41,7 +41,8 @@ def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
 def register(request):
-  if request.method == "POST":
+    if request.method != "POST":
+        return render(request, 'accounts/User/register.html')
     username = request.POST['username']
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -64,10 +65,6 @@ def register(request):
     messages.success(request, "Your account is successfully created.")
 
     return redirect('login')
-
-
-
-  return render(request, 'accounts/User/register.html')
 
 
 from django.contrib.auth import login as auth_login
@@ -114,5 +111,5 @@ def profile(request):
     return render(request, 'accounts/User/profile.html')
 
 
-def signout(request):
-    pass
+
+
