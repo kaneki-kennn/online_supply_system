@@ -23,7 +23,9 @@
               <h1 class="p1">Cebu Technological University - Argao Campus</h1>
             </div>
             <div>
-              <img class="profile_img" src="{% static 'images/profile_default_image.png' %}" alt="">
+              <a href="{% url 'profile' %}">
+                <img class="profile_img" src="{% static 'images/profile_default_image.png' %}" alt="">
+              </a>
             <div>
               <h1 class="p1">Profile Name</h1>
             </div>
@@ -66,11 +68,15 @@
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <a class="list-group-item list-group-item-action list-group-item-light p-2 border-0" href="#!"></a>
 >>>>>>> 2e4d40febb7b78d9a0cc41c92069cf929d038347
 =======
 >>>>>>> ad97589075ca3b4b81fa81a03cb5fdaa1a5cf2f3
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
+=======
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
+>>>>>>> 3deca9a7107612ab5a799d5469c67bb67da88e5f
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
               </a>
             </div>
