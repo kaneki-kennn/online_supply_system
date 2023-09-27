@@ -105,3 +105,5 @@ def notification(request):
     return render(request, 'accounts/User/notification.html')
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
+def profile(request):
+    return render(request, 'accounts/User/tracker.html')

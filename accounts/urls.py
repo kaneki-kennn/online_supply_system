@@ -16,6 +16,6 @@ urlpatterns = [
    path('status/',views.status, name='status'),
    path('tracker/',views.tracker, name='tracker'),
    path('verify/',views.verify, name='verify'),
-
+   path('profile/',views.profile, name='profile'),
 ]
    
