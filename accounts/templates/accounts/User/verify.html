@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <h2>Purchase Request No. 0000001</h2>
     <table>
         <tr>
@@ -53,3 +54,39 @@
     <p><a href="item_received_link.html">ITEM RECEIVED</a></p>
 </body>
 </html>
+=======
+    <div class="title">Online Supply System</div>
+    <div class="wrapper">
+        <div>
+            <form action=""></form>
+            <img class="verification_icon" src="{% static 'images/verificationlogo.png' %}" alt="">
+            <div>
+        <header></header>
+            <h1>Input Code</h1>
+            <p> Enter the Confirmation Code we sent to your phone.</p>
+            <div class="otp-bx">
+                <input type="number" required oninput="maxLengthCheck(this, 1)">
+                <input type="number" required oninput="maxLengthCheck(this, 1)">
+                <input type="number" required oninput="maxLengthCheck(this, 1)">
+                <input type="number" required oninput="maxLengthCheck(this, 1)">
+            </div>
+            <script>
+                function maxLengthCheck(object, maxLength) {
+                    if (object.value.length > maxLength)
+                        object.value = object.value.slice(0, maxLength);
+                }
+                </script>
+
+            <div class="verify-link">
+                <a href="#">Resend Code:</a> <button type="submit" class="btn">Verify Code</button>
+            </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+        
+        </html>
+
+        
+>>>>>>> ad97589075ca3b4b81fa81a03cb5fdaa1a5cf2f3

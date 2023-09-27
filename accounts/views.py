@@ -51,10 +51,8 @@ def register(request):
     pass1 = request.POST['pass1']
     pass2 = request.POST['pass2']
 
-    # Check if the passwords match
     if pass1 != pass2:
-      # If the passwords do not match, raise an error
-      raise ValueError("Passwords do not match")
+        raise ValueError("password not match.")
 
     myuser = User.objects.create_user(username, email, pass1)
     myuser.first_name = fname
@@ -84,7 +82,7 @@ def login(request):
         if user is not None:
             auth_login(request, user)  # Use auth_login here to avoid conflicts
             fname = user.first_name
-            return render(request, "accounts/User/requester.html", {'fname': fname})
+            return render(request, "accounts/User/notification.html", {'fname': fname})
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
@@ -100,6 +98,7 @@ def reset(request):
 def verify(request):
     return render(request, 'accounts/User/verify.html')
 
+<<<<<<< HEAD
 def signout(request):
     pass
 
@@ -107,3 +106,23 @@ def notification(request):
     return render(request, 'accounts/User/notification.html')
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
+=======
+def about(request):
+    return render(request, 'accounts/User/about.html')
+
+def history(request):
+    return render(request, 'accounts/User/history.html')
+
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
+
+def notification(request):
+    return render(request, 'accounts/User/notification.html')
+
+def profile(request):
+    return render(request, 'accounts/User/profile.html')
+
+
+def signout(request):
+    pass
+>>>>>>> ad97589075ca3b4b81fa81a03cb5fdaa1a5cf2f3
