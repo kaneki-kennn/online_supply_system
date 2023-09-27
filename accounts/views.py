@@ -113,3 +113,6 @@ def profile(request):
 
 
 
+
+def director_requester(request):
+    return render(request, 'accounts/Admin/director_requester.html')
