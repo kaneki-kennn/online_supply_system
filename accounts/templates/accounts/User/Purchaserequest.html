@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        /* Add any additional CSS styling for your table here */
+       
         table {
             width: 100%;
         }
@@ -15,20 +15,21 @@
             background-color: #f2f2f2;
         }
         .timestamp-column {
-            width: 20%; /* Adjust the width as needed */
+            width: 20%; 
         }
         .status-column {
-            width: 80%; /* Adjust the width as needed */
+            width: 80%; 
+            position: relative; 
+        }
+        .status-link {
+            position: absolute;
+            right: 0;
         }
     </style>
 </head>
 <body>
     <h2>Purchase Request No. 0000001</h2>
     <table>
-        <tr>
-            <th class="timestamp-column">Timestamp</th>
-            <th class="status-column">Status</th>
-        </tr>
         <tr>
             <td class="timestamp-column">Currently</td>
             <td class="status-column">Waiting for the BAC Secretariat to create a Resolution.</td>
@@ -45,11 +46,20 @@
             <td class="timestamp-column">1 hr ago</td>
             <td class="status-column">Campus Director has approved your request.</td>
         </tr>
+       
         <tr>
             <td class="timestamp-column">09/01/23</td>
-            <td class="status-column">Purchase Request Sent.</td>
+            <td class="status-column">
+              Purchase Request Sent
+                <a class="status-link" href="item_received_link.html">Click here</a>
+            </td>
         </tr>
     </table>
-    <p><a href="item_received_link.html">ITEM RECEIVED</a></p>
+    
+    <div class="column">
+        <form action="ITEM RECEIVED.php" method="post">
+            <input type="submit" value="ITEM RECEIVED">
+        </form>
+    </div>
 </body>
 </html>
