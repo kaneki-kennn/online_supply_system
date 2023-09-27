@@ -412,3 +412,7 @@ label {
   display: inline-block;
   padding-top: 1rem;
 }
+.requestrecords{
+  width: 150vh;
+  padding: 0% !important;
+}
