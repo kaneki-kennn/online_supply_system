@@ -380,6 +380,29 @@ footer{
   align-content: center;
   justify-content: space-evenly;
   padding: 17px !important;
+<<<<<<< HEAD
   position: -webkit-sticky; /* Safari */
   position: sticky;
+=======
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Style for the close button */
+.popup-close {
+  display: block;
+  text-align: right;
+  cursor: pointer;
+>>>>>>> ddfa0b7b477bc960c2c4421a0e115437dae88fbd
 }
