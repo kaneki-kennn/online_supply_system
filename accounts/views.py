@@ -98,7 +98,6 @@ def reset(request):
 def verify(request):
     return render(request, 'accounts/User/verify.html')
 
-<<<<<<< HEAD
 def signout(request):
     pass
 
@@ -106,23 +105,3 @@ def notification(request):
     return render(request, 'accounts/User/notification.html')
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
-=======
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
-def history(request):
-    return render(request, 'accounts/User/history.html')
-
-def tracker(request):
-    return render(request, 'accounts/User/tracker.html')
-
-def notification(request):
-    return render(request, 'accounts/User/notification.html')
-
-def profile(request):
-    return render(request, 'accounts/User/profile.html')
-
-
-def signout(request):
-    pass
->>>>>>> ad97589075ca3b4b81fa81a03cb5fdaa1a5cf2f3

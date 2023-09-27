@@ -3,7 +3,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-       
         table {
             width: 100%;
         }
@@ -18,12 +17,19 @@
             width: 20%; 
         }
         .status-column {
-            width: 80%; 
-            position: relative; 
+            width: 60%; 
+        }
+        .button-column {
+            width: 20%;
+            text-align: center; 
         }
         .status-link {
             position: absolute;
             right: 0;
+        }
+        
+        tr:not(:first-child) {
+            border-top: 1px solid #ccc; 
         }
     </style>
 </head>
@@ -33,18 +39,26 @@
         <tr>
             <td class="timestamp-column">Currently</td>
             <td class="status-column">Waiting for the BAC Secretariat to create a Resolution.</td>
+            <td class="button-column">
+                <form action="ITEM RECEIVED.php" method="post">
+                    <input type="submit" value="ITEM RECEIVED">
+                </form>
+            </td>
         </tr>
         <tr>
             <td class="timestamp-column">1 hr ago</td>
             <td class="status-column">Campus Director has approved your request.</td>
+            <td class="button-column"></td> 
         </tr>
         <tr>
             <td class="timestamp-column">09/02/23</td>
             <td class="status-column">Budget Officer has approved your request.</td>
+            <td class="button-column"></td>
         </tr>
         <tr>
             <td class="timestamp-column">1 hr ago</td>
             <td class="status-column">Campus Director has approved your request.</td>
+            <td class="button-column"></td>
         </tr>
        
         <tr>
@@ -53,13 +67,8 @@
               Purchase Request Sent
                 <a class="status-link" href="item_received_link.html">Click here</a>
             </td>
+            <td class="button-column"></td> 
         </tr>
     </table>
-    
-    <div class="column">
-        <form action="ITEM RECEIVED.php" method="post">
-            <input type="submit" value="ITEM RECEIVED">
-        </form>
-    </div>
 </body>
 </html>
