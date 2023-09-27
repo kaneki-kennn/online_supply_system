@@ -16,6 +16,14 @@ urlpatterns = [
    path('status/',views.status, name='status'),
    path('tracker/',views.tracker, name='tracker'),
    path('verify/',views.verify, name='verify'),
+<<<<<<< HEAD
    path('profile/',views.profile, name='profile'),
 ]
    
+=======
+   path('about/',views.about, name='about'),
+   path('history/',views.history, name='history'),
+   path('profile/',views.profile, name='profile'),
+   path('director_requester', views.director_requester,name='director_requester')
+]
+>>>>>>> b599dcdf8b7e1e6393794b69264735898c2b7c57

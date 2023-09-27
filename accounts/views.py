@@ -106,4 +106,15 @@ def notification(request):
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
 def profile(request):
+<<<<<<< HEAD
     return render(request, 'accounts/User/tracker.html')
+=======
+    return render(request, 'accounts/User/profile.html')
+
+
+def signout(request):
+    pass
+
+def director_requester(request):
+    return render(request, 'accounts/Admin/director_requester.html')
+>>>>>>> b599dcdf8b7e1e6393794b69264735898c2b7c57
