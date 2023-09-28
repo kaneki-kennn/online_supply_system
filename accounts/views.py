@@ -110,6 +110,9 @@ def tracker(request):
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
+def pro_file(request):
+    return render(request, 'accounts/User/pro_file.html')
+
 def profile(request):
     return render(request, 'accounts/User/profile.html')
 

@@ -16,5 +16,6 @@ urlpatterns = [
    path('verify/',views.verify, name='verify'),
    path('about/',views.about, name='about'),
    path('history/',views.history, name='history'),
+   path('pro_file/',views.pro_file, name='pro_file'),
     path('profile/',views.profile, name='profile'),
 ]
