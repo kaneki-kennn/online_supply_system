@@ -1,39 +1,8 @@
+.request-tracker {
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+        font-size: 4opx;
+        font-family: serif;
+        display: flex;
+        align-content: center;
+    
 }
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-
-.currently {
-    background-color: #c7ffd8; 
-}
-.opposite-side {
-    background-color: #ffcccb;
-}
-    table {
-        width: 100%;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
-    .timestamp-column {
-        width: 20%; 
-    }
-    .status-column {
-        width: 80%; 
-    }

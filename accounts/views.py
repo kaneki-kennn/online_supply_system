@@ -41,7 +41,8 @@ def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
 def register(request):
-  if request.method == "POST":
+    if request.method != "POST":
+        return render(request, 'accounts/User/register.html')
     username = request.POST['username']
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -64,10 +65,6 @@ def register(request):
     messages.success(request, "Your account is successfully created.")
 
     return redirect('login')
-
-
-
-  return render(request, 'accounts/User/register.html')
 
 
 from django.contrib.auth import login as auth_login
@@ -106,15 +103,14 @@ def notification(request):
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
 def profile(request):
-<<<<<<< HEAD
-    return render(request, 'accounts/User/tracker.html')
-=======
     return render(request, 'accounts/User/profile.html')
+def about(request):
+    return render(request, 'accounts/User/about.html')
+def history(request):
+    return render(request, 'accounts/User/history.html')
 
 
-def signout(request):
-    pass
+
 
 def director_requester(request):
     return render(request, 'accounts/Admin/director_requester.html')
->>>>>>> b599dcdf8b7e1e6393794b69264735898c2b7c57
