@@ -1,8 +1,6 @@
-.request-tracker {
-
-        font-size: 4opx;
-        font-family: serif;
-        display: flex;
-        align-content: center;
-    
+.centered-request-tracker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
 }
