@@ -344,3 +344,12 @@ i.bi-circle-fill {
   font-size: 20px;
   font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+.row:hover {
+  background-color: #e9ecef !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  border: 1px solid white !important;
+}
+>>>>>>> 9e6ffed41755b079d3e73e1952f4dcacbb90c76f
