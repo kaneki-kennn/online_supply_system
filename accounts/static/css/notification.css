@@ -1,8 +1,4 @@
-.notification h1 {
-   
-        font-size: 4opx;
-        font-family: serif;
-        display: flex;
-        align-content: center;
-    
+.h1{
+        font-family: 'Times New Roman', Times, serif;
+        font-style: normal;
 }
