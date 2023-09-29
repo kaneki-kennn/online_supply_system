@@ -127,6 +127,9 @@ def profile(request):
 def signout(request):
     pass
 
+def cash(request):
+    return render(request, 'accounts/Admin/Accounting/cash.html')
+
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
 
