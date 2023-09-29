@@ -114,5 +114,20 @@ def profile(request):
 
 
 
-def director_requester(request):
-    return render(request, 'accounts/Admin/director_requester.html')
+def campus_director_requester(request):
+    return render(request, 'accounts/Admin/campusD/requester.html')
+
+def campus_director_notification(request):
+    return render(request, 'accounts/Admin/campusD/notification.html')
+
+def campus_director_resolution(request):
+    return render(request, 'accounts/Admin/campusD/resolution.html')
+
+def campus_director_history(request):
+    return render(request, 'accounts/Admin/campusD/history.html')
+
+def supply_office_notification(request):
+    return render(request, 'accounts/Admin/Supply_office/notification.html')
+
+def supply_office_history(request):
+    return render(request, 'accounts/Admin/Supply_office/history.html')
