@@ -23,4 +23,9 @@ urlpatterns = [
    path('campus_director/history/', views.campus_director_history,name='campusD_history'),
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
+   path('director_requester', views.director_requester,name='director_requester'),
+   path('cash/',views.cash, name='cash'),
+   path('drequester/', views.drequester,name='drequester'),
+   path('dnotification/', views.dnotification,name='dnotification'),
+   path('dresolution/', views.dresolution,name='dresolution'),
 ]
