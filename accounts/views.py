@@ -121,10 +121,20 @@ def tracker(request):
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
+def pro_file(request):
+    return render(request, 'accounts/User/pro_file.html')
 
 def profile(request):
     return render(request, 'accounts/User/profile.html')
 
+def profile_html(request):
+    return render(request, 'profile.html')
+
+def notification_html(request):
+    return render(request, 'notification.html')
+
+def pro_file_html(request):
+    return render(request, 'pro_file.html')
 
 def signout(request):
     pass

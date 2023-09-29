@@ -48,7 +48,6 @@ class Status(models.Model):
     status = models.CharField(max_length=200,null=True, choices=STATUS)
 
 
-from django.db import models
 
 class Item(models.Model):
     item_no = models.IntegerField()
