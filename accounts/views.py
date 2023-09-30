@@ -103,7 +103,6 @@ def reset(request):
 def verify(request):
     return render(request, 'accounts/User/verify.html')
 
-<<<<<<< HEAD
 def signout(request):
     pass
 
@@ -123,7 +122,6 @@ def history(request):
 
 def director_requester(request):
     return render(request, 'accounts/Admin/director_requester.html')
-=======
 
 def about(request):
     return render(request, 'accounts/User/about.html')
@@ -178,4 +176,3 @@ def supply_office_history(request):
 
 def supply_office_about(request):
     return render(request, 'accounts/Admin/Supply_office/about.html')
->>>>>>> a00ecb5b1a71db78f90c6b4c5f0a388af054d05e
