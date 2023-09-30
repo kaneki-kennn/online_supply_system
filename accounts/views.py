@@ -5,96 +5,105 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
-# Create your views here.
+
 
 def home(request):
     requester = Requester.objects.all()
     status = Status.objects.all()
-    
     total_requester = requester.count()
-
     total_status = status.count()
     approved = status.filter(status='Approved').count()
     pending = status.filter(status='Pending').count()
     declined = status.filter(status='Declined').count()
 
-    context = {'requester':requester, 'status': status, 
-    'total_requester':  total_requester,
-    'total_status': total_status,'approved': approved,
-    'pending': pending,'declined': declined}
-
+    context = {
+        'requester': requester, 
+        'status': status, 
+        'total_requester': total_requester,
+        'total_status': total_status,
+        'approved': approved,
+        'pending': pending,
+        'declined': declined
+        }
     return render(request, 'accounts/User/dashboard.html', context)   
+
 
 def requester(request,):
     requester = Requester.objects.all()
-    context= {'requester': requester, 'products': products}
+    context= {
+        'requester': requester, 
+        'products': products
+        }
     return render(request, 'accounts/User/requester.html', context)
+
 
 def products(request):
     products = Products.objects.all()   
     return render(request, 'accounts/User/products.html', {'products': products})
 
+
 def status(request):
     return render(request, 'accounts/User/status.html') 
+
 
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
+
 def register(request):
-    if request.method != "POST":
-        return render(request, 'accounts/User/register.html')
-    username = request.POST['username']
-    fname = request.POST['fname']
-    lname = request.POST['lname']
-    email = request.POST['email']
-    contact1 = request.POST['contact1']
-    contact2 = request.POST['contact2']
-    pass1 = request.POST['pass1']
-    pass2 = request.POST['pass2']
+    if request.method == "POST":
+        username = request.POST['username']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        email = request.POST['email']
+        contact1 = request.POST['contact1']
+        contact2 = request.POST['contact2']
+        pass1 = request.POST['pass1']
+        pass2 = request.POST['pass2']
+        
+        if pass1 != pass2:
+            raise ValueError("password not match.")
+        
+        myuser = User.objects.create_user(username, email, pass1)
+        myuser.first_name = fname
+        myuser.last_name = lname
+        
+        myuser.save()
+        messages.success(request, "Your account is successfully created.")
+        
+        return redirect('login')
+    return render(request, 'accounts/User/register.html')
 
-    if pass1 != pass2:
-        raise ValueError("password not match.")
-
-    myuser = User.objects.create_user(username, email, pass1)
-    myuser.first_name = fname
-    myuser.last_name = lname
-
-    myuser.save()
-
-    # Display a success message if the user is successfully registered
-    messages.success(request, "Your account is successfully created.")
-
-    return redirect('login')
-
-
-from django.contrib.auth import login as auth_login
 
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         pass1 = request.POST['pass1']
-
         user = authenticate(username=username, password=pass1)
-
+        
         if user is not None:
             auth_login(request, user)  # Use auth_login here to avoid conflicts
             fname = user.first_name
             return render(request, "accounts/User/notification.html", {'fname': fname})
+        
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
-    
     return render(request, 'accounts/User/login.html')
+
 
 def forgot(request):
     return render(request, 'accounts/User/forgot.html')
 
+
 def reset(request):
     return render(request, 'accounts/User/reset.html')
+
 
 def verify(request):
     return render(request, 'accounts/User/verify.html')
 
+<<<<<<< HEAD
 def signout(request):
     pass
 
@@ -114,3 +123,59 @@ def history(request):
 
 def director_requester(request):
     return render(request, 'accounts/Admin/director_requester.html')
+=======
+
+def about(request):
+    return render(request, 'accounts/User/about.html')
+
+
+def history(request):
+    return render(request, 'accounts/User/history.html')
+
+
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
+
+
+def notification(request):
+    return render(request, 'accounts/User/notification.html')
+
+
+def profile(request):
+    return render(request, 'accounts/User/profile.html')
+
+
+def signout(request):
+    pass
+
+def cash(request):
+    return render(request, 'accounts/Admin/Accounting/cash.html')
+
+def campus_director_requester(request):
+    return render(request, 'accounts/Admin/campusD/requester.html')
+
+def campus_director_notification(request):
+    return render(request, 'accounts/Admin/campusD/notification.html')
+
+def campus_director_resolution(request):
+    return render(request, 'accounts/Admin/campusD/resolution.html')
+
+def campus_director_history(request):
+    return render(request, 'accounts/Admin/campusD/history.html')
+
+def campus_director_about(request):
+    return render(request, 'accounts/Admin/campusD/about.html')
+
+def supply_office_home(request):
+    return render(request, 'accounts/Admin/Supply_office/home.html')
+
+
+def supply_office_notification(request):
+    return render(request, 'accounts/Admin/Supply_office/notification.html')
+
+def supply_office_history(request):
+    return render(request, 'accounts/Admin/Supply_office/history.html')
+
+def supply_office_about(request):
+    return render(request, 'accounts/Admin/Supply_office/about.html')
+>>>>>>> a00ecb5b1a71db78f90c6b4c5f0a388af054d05e
