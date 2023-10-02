@@ -25,7 +25,6 @@ urlpatterns = [
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
    path('director_requester', views.director_requester,name='director_requester'),
    path('cash/',views.cash, name='cash'),
-   path('drequester/', views.drequester,name='drequester'),
    path('dnotification/', views.dnotification,name='dnotification'),
    path('dresolution/', views.dresolution,name='dresolution'),
-]
+] 

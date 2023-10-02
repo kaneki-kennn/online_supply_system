@@ -162,3 +162,6 @@ def dnotification(request):
 
 def dresolution(request):
     return render(request, 'accounts/Admin/campusD/dresolution.html')
+
+
+
