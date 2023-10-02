@@ -126,17 +126,9 @@ def profile(request):
 
 def signout(request):
     pass
-def director_requester(request):
-    return render(request, 'accounts/Admin/director_requester.html')
-
 
 def cash(request):
     return render(request, 'accounts/Admin/Accounting/cash.html')
-
-
-def signout(request):
-    pass
-
 
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
@@ -150,18 +142,18 @@ def campus_director_resolution(request):
 def campus_director_history(request):
     return render(request, 'accounts/Admin/campusD/history.html')
 
+def campus_director_about(request):
+    return render(request, 'accounts/Admin/campusD/about.html')
+
+def supply_office_home(request):
+    return render(request, 'accounts/Admin/Supply_office/home.html')
+
+
 def supply_office_notification(request):
     return render(request, 'accounts/Admin/Supply_office/notification.html')
 
 def supply_office_history(request):
     return render(request, 'accounts/Admin/Supply_office/history.html')
 
-def dnotification(request):
-    return render(request, 'accounts/Admin/campusD/dnotification.html')
-
-
-def dresolution(request):
-    return render(request, 'accounts/Admin/campusD/dresolution.html')
-
-
-
+def supply_office_about(request):
+    return render(request, 'accounts/Admin/Supply_office/about.html')
