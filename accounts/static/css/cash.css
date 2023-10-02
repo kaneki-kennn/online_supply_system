@@ -326,9 +326,6 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 
-
-
-
 .welcome{
   background-color: #6C757D!important;
   color: white;
@@ -350,6 +347,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .arrow_img {
   height: 30px;
   width: 30px;
+  position: sticky;
 }
 
 
