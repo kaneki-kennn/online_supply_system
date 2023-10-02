@@ -15,7 +15,6 @@ class Requester (models.Model):
 
 # models.py
 
-from django.db import models
 
 class PurchaseRequestItem(models.Model):
     department = models.CharField(max_length=100)
