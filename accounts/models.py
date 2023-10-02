@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 # Create your models here.
 
 class Requester (models.Model):
@@ -47,11 +48,22 @@ class Status(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)      
     status = models.CharField(max_length=200,null=True, choices=STATUS)
 
+
+
 class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
-    is_read = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
+    is_read = models.BooleanField(default=False)
+
 
 def __str__(self):
         return self.message
+    
+
+class Item(models.Model):
+    item_name = models.CharField(max_length=255)
+    item_description = models.CharField(max_length=255)
+    item_unit = models.CharField(max_length=50)
+    item_quantity = models.IntegerField()
+    item_price = models.DecimalField(max_digits=10, decimal_places=2)

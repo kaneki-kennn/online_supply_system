@@ -6,3 +6,7 @@
         align-content: center;
     
 }
+
+.notification-count {
+        color: red;
+    }

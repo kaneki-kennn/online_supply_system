@@ -81,26 +81,34 @@
       </div>
           </form>
           <div class="container">
-            <table class="table table-bordered table-responsive" id="itemTable">
-                <thead>
-                    <tr>
-                        <th class="">Item No.</th>
-                        <th class="">Item Name</th>
-                        <th class="">Item Brand/Description</th>
-                        <th class="">Unit</th>
-                        <th class="">Quantity</th>
-                        <th class="">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Rows for items will be added here dynamically -->
-                </tbody>
-            </table>
-          </div>
-        <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
-          <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
-          <input class="btn btn-primary" type="submit" value="Submit">
-        </div>
+          <forms action="" method="post" >
+             {% csrf_token %}
+                <table class="table table-bordered table-responsive" id="itemTable">
+                    <thead>
+                        <tr>
+                            <th class="">Item No.</th>
+                            <th class="">Item Name</th>
+                            <th class="">Item Brand/Description</th>
+                            <th class="">Unit</th>
+                            <th class="">Quantity</th>
+                            <th class="">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <td><input type="text" class="form-control" name="item_name"></td>
+                      <td><input type="text" class="form-control" name="item_description"></td>
+                      <td><input type="text" class="form-control" name="item_unit"></td>
+                      <td><input type="text" class="form-control" name="item_quantity"></td>
+                      <td><input type="text" class="form-control" name="item_price"></td>
+                        <!-- Rows for items will be added here dynamically -->
+                    </tbody>
+                </table>
+              </div>
+            <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
+              <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
+              <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+          </forms>
         <div 
         class="container justify-content-end align-items-baseline">
           Total Amount: _______________

@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
+from .views import get_notifications
 
 
 urlpatterns = [
    path('',views.homepage, name='homepage'),
    path('requester/',views.requester, name='requester'),
+   path('request/',views.request, name='request'),
    path('products/',views.products, name='products'),
    path('status/',views.status, name='status'),
    path('register/',views.register, name='register'),
@@ -23,4 +25,6 @@ urlpatterns = [
    path('campus_director/history/', views.campus_director_history,name='campusD_history'),
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
+   path('get-notifications/', get_notifications, name='get_notifications'),
+   path('api/get-notifications/', views.get_notifications, name='get_notifications'),
 ]

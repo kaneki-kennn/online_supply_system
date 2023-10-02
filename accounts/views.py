@@ -5,6 +5,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
+from django.http import JsonResponse
+from .models import Notification
+from django.shortcuts import render
+from .forms import ItemForm
+
 # Create your views here.
 
 def home(request):
@@ -131,3 +136,31 @@ def supply_office_notification(request):
 
 def supply_office_history(request):
     return render(request, 'accounts/Admin/Supply_office/history.html')
+
+
+
+def create_notification(user, message):
+    Notification.objects.create(user=user, message=message)
+    
+    
+
+
+def get_notifications(request):
+    user = request.user  # Assuming you're using the built-in User model
+    notifications = Notification.objects.filter(user=user, is_read=False)
+    notifications_data = [{'message': n.message, 'timestamp': n.timestamp} for n in notifications]
+    return JsonResponse({'notifications': notifications_data})
+
+
+
+def request(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # You can add a success message or redirect to a different page
+            return redirect('success_view_name')  # Replace 'success_view_name' with your success view name
+    else:
+        form = ItemForm()
+
+    return render(request, 'accounts/User/requester.html', {'form': form})

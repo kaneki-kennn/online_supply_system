@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.template',
     'accounts',
     'djongo',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -77,20 +78,17 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # defaultdb
+
+
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'mydatabase',
+        'HOST': 'localhost',
+        'PORT': 27017,
     }
 }
-
-#shiela database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'inventorydb',
-#     }
-# }
 
 # # jelyn database
 # DATABASES = {
