@@ -57,3 +57,5 @@ class Item(models.Model):
     unit = models.CharField(max_length=50)
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
+
+
