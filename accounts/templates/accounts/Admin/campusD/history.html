@@ -11,11 +11,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
       <link rel="stylesheet" href="{% static 'css/main.css' %}">
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
 
   </head>
   <body>
@@ -43,13 +38,15 @@
         <div class="sidebar">
           <div class="d-flex flex-wrap align-content-between h-100">
             <div class="bg-white w-100" id="sidebar-wrapper">
-              <div class="list-group w-100">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
-              </div>
+                <div class="bg-white w-100" id="sidebar-wrapper">
+                    <div class="list-group w-100">
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_notification' %}">Home</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_requester' %}">Purchase Request</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_resolution' %}">Resolution</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_history' %}">History</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_about' %}">About Us</a>
+                    </div>
+                  </div>
             </div>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
               <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
@@ -57,14 +54,9 @@
           </div>
         </div>
 
-
-<<<<<<< HEAD
-        <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; ">
-=======
         <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
->>>>>>> 7ae62d9e095b3e3d8a54a1323add669e8ee36ab2
           <div class="container">
-            <h1 class="pr text-center pt-4">HISTORY ON REQUEST PURCHASES</h1>  
+            <h1 class="pr text-center pt-4">ACTIVITY HISTORY</h1>  
           </div>
           <div class="container" style=" display: inline-flex; margin: 3; flex-direction: column;">
             <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
@@ -95,7 +87,6 @@
             <div class="col-2" onclick="red()">
               <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
-            
           </div>
           <div class="row w-100 m-auto border text-center text-success">
             <div class="col-4">
@@ -113,7 +104,7 @@
                 28/09/2023
               </p>
             </div>
-            <div class="col-2"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="col-2"  data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="green()">
               <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
           <!-- Modal -->
@@ -135,12 +126,12 @@
                     <div class="row w-100 m-auto border text-start p-0 text-dark ">
                       <div class="col-6 border">
                         <p>
-                          Office/ Section:
+                          PR ID:
                         </p>
                       </div>
                       <div class="col-6 border text-dark text-start">
                         <p>
-                          PR No.: 0000002
+                          Requester ID:
                         </p>
                       </div>
                   </div>
@@ -161,23 +152,21 @@
                   <table class="table table-bordered table-responsive" id="itemTable">
                     <thead>
                         <tr>
-                            <th class="">Stock/ Property No.</th>
-                            <th class="">Unit</th>
+                            <th class="">Item No.</th>
+                            <th class="">Item Name</th>
                             <th class="">Item Brand/Description</th>
+                            <th class="">Unit</th>
                             <th class="">Quantity</th>
-                            <th class="">Unit Cost</th>
-                            <th class="">Total Cost</th>
+                            <th class="">Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        
-              
+                        <td>1</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
                     </tbody>
                 </table>
                 <div 
@@ -202,7 +191,7 @@
   <script>
     function red() {
       Swal.fire({
-          title: 'Your request has been declined',
+          title: 'You declined this request',
           text: "Reason of Disapproval: "
         })
 
@@ -211,5 +200,4 @@
         }
     }
     </script>
-
 </html>
