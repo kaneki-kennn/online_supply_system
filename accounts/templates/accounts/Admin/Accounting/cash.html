@@ -61,13 +61,17 @@
           </div>
           <div class="column">
             <p>
-              Purchase Request No. <span style="color: blue;">000003</span> is waiting for you.
+              Purchase Request No.
+              <a href="">000003
+                
+              </a> is waiting for you.
               <span id="timestamp"></span>
               <script>
                 var currentDate = new Date();
                 var timestampElement = document.getElementById("timestamp");
                 var formattedDate = currentDate.toLocaleString();
-                timestampElement.textContent = " - Time: " + formattedDate;
+                var dashes = "-".repeat(140);
+                timestampElement.textContent = dashes + " Time: " + formattedDate;
               </script>
             </p>
           </div>
