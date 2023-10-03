@@ -167,8 +167,6 @@ def create_notification(user, message):
     Notification.objects.create(user=user, message=message)
     
     
-
-
 def get_notifications(request):
     user = request.user  # Assuming you're using the built-in User model
     notifications = Notification.objects.filter(user=user, is_read=False)
