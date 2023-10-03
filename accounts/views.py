@@ -96,6 +96,12 @@ def signout(request):
 def cash(request):
     return render(request, 'accounts/Admin/Accounting/cash.html')
 
+def form(request):
+    return render(request, 'accounts/Admin/Accounting/form.html')
+
+def decline(request):
+    return render(request, 'accounts/Admin/Accounting/decline.html')
+
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
 
