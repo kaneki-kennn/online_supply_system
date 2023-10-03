@@ -18,6 +18,8 @@ urlpatterns = [
    path('history/',views.history, name='history'),
    path('profile/',views.profile, name='profile'),
    path('cash/',views.cash, name='cash'),
+   path('form/',views.form, name='form'),
+   path('decline/',views.decline, name='decline'),
    path('campus_director/requester/', views.campus_director_requester,name='campusD_requester'),
    path('campus_director/notification/', views.campus_director_notification,name='campusD_notification'),
    path('campus_director/resolution/', views.campus_director_resolution,name='campusD_resolution'),
@@ -27,6 +29,5 @@ urlpatterns = [
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
    path('supply_office/about/', views.supply_office_about,name='supply_office_about'),
-   
-   
+
 ]
