@@ -126,6 +126,8 @@ def supply_office_about(request):
 
 def supply_office_inventory(request):
     return render(request, 'accounts/Admin/Supply_office/inventory.html')
+
+
 # views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
