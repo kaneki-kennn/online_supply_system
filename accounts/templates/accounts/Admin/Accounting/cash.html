@@ -59,22 +59,21 @@
           <div class="container">
             <h1> <img class="notiff" src="{% static 'images/bell.png' %}" alt="">CASH DISBURSEMENT</h1>
           </div>
+
           <div class="column">
-            <p>
-              Purchase Request No.
-              <a href="">000003
-                
-              </a> is waiting for you.
+            <div>
+              Purchase Request No. <a href=""> 000003</a> is waiting for you.
               <span id="timestamp"></span>
               <script>
                 var currentDate = new Date();
                 var timestampElement = document.getElementById("timestamp");
                 var formattedDate = currentDate.toLocaleString();
-                var dashes = "-".repeat(140);
-                timestampElement.textContent = dashes + " Time: " + formattedDate;
+                var dashes = "-".repeat(130);
+                timestampElement.textContent = dashes + " Date & Time: " + formattedDate;
               </script>
-            </p>
+            </div>
           </div>
+        </div>
     </div>  
   </body>  
 </html> 
