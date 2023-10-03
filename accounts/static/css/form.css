@@ -6,14 +6,20 @@
 }
 
 
+.column,
+.column * {
+  box-sizing: border-box;
+}
+
+
 .container {
   position: absolute;
   width: 900px;
-  height: 650px;
+  height: 600px;
   background: rgba(255, 255, 255, 0.486);
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
   color: #003566;
-  padding: 60px 40px;
+  padding: 19px 40px;
   padding-right: 60px;
   border-style: solid;
   border-width: 2px;
@@ -21,26 +27,18 @@
   top: 160px;
 }
 
-
-.pr_ID{
+.column {
+  margin: 0;
+  padding: 0;
   background: rgba(0, 53, 102, 0.5);
   border-style: solid;
   border-color: #000000;
-  border-width: 2px;
-  width: fixed;
-  height: 30px;
+  border-width: 3px;
+  width: 854.2px;
+  height:40px;
   position: relative;
-}
-
-
-.requester_ID{
-  background: rgba(0, 53, 102, 0.5);
-  border-style: solid;
-  border-color: #000000;
-  border-width: 2px;
-  width: fixed;
-  height: 30px;
-  position: relative;
+  right: 20px;
+  top: 25px;
 }
 
 
@@ -50,20 +48,20 @@
   border-color: #000000;
   border-width: 3px;
   width: 855px;
-  height: 450px;
+  height: 439px;
   position: absolute;
-  left: 19px;
-  top: 117.8px;
+  left: 19.5px;
+  top: 85px;
 }
 
 
 .department{
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 750 21px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 45.95px;
-  top: 124.76px;
+  top: 105px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -72,10 +70,10 @@
 .purpose {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 750 21px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 45.95px;
-  top: 197.65px;
+  top: 178px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -84,10 +82,10 @@
 .item-no {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 680 17px "Source Sans Pro", sans-serif;
   position: absolute;
-  left: 45.95px;
-  top: 276.46px;
+  left: 55px;
+  top: 269px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -96,10 +94,10 @@
 .item-brand{
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 680 17px "Source Sans Pro", sans-serif;
   position: absolute;
-  left: 310.49px;
-  top: 276.46px;
+  left: 340px;
+  top: 258px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -108,10 +106,10 @@
 .unit {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 680 17px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 519.13px;
-  top: 276.46px;
+  top: 269px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -120,10 +118,10 @@
 .quantity {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 680 17px "Source Sans Pro", sans-serif;
   position: absolute;
-  left: 608.98px;
-  top: 276.46px;
+  left: 620px;
+  top: 269px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -132,10 +130,10 @@
 .price {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 680 17px "Source Sans Pro", sans-serif;
   position: absolute;
-  left: 754.72px;
-  top: 276.46px;
+  left: 780px;
+  top: 269px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -144,10 +142,10 @@
 .total-amount {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 700 20px "Source Sans Pro", sans-serif;
   position: absolute;
-  left: 546.09px;
-  top: 497.11px;
+  left: 580px;
+  top: 470px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -156,10 +154,10 @@
 .item {
   color: #000000;
   text-align: left;
-  font: 700 16px "Source Sans Pro", sans-serif;
+  font: 680 17px "Source Sans Pro", sans-serif;
   position: absolute;
-  left: 191.7px;
-  top: 276.46px;
+  left: 205px;
+  top: 269px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -173,7 +171,7 @@
   height: 0px;
   position: absolute;
   left: 24.99px;
-  top: 197.65px;
+  top: 155px;
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
@@ -187,7 +185,7 @@
   height: 0px;
   position: absolute;
   left: 24.99px;
-  top: 349.35px;
+  top: 330px;
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
@@ -201,7 +199,7 @@
   height: 0px;
   position: absolute;
   left: 24.99px;
-  top: 408.45px;
+  top: 390px;
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
@@ -215,7 +213,7 @@
   height: 0px;
   position: absolute;
   left: 24.99px;
-  top: 491.2px;
+  top: 446px;
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
@@ -229,7 +227,7 @@
   height: 0px;
   position: absolute;
   left: 24.99px;
-  top: 270.55px;
+  top: 225px;
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
@@ -243,7 +241,7 @@
   height: 0px;
   position: absolute;
   left: 160.75px;
-  top: 270.55px;
+  top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
 }
@@ -257,7 +255,7 @@
   height: 0px;
   position: absolute;
   left: 584.02px;
-  top: 270.55px;
+  top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
 }
@@ -271,7 +269,7 @@
   height: 0px;
   position: absolute;
   left: 727.77px;
-  top: 270.55px;
+  top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
 }
@@ -285,7 +283,7 @@
   height: 0px;
   position: absolute;
   left: 288.53px;
-  top: 270.55px;
+  top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
 }
@@ -299,7 +297,7 @@
   height: 0px;
   position: absolute;
   left: 492.18px;
-  top: 270.55px;
+  top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
 }
