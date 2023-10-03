@@ -1,19 +1,16 @@
 from django.urls import path
-from . import views
-from .views import get_notifications
+from . import views 
 
 
 urlpatterns = [
-   path('',views.homepage, name='homepage'),
+   path('dashboard',views.homepage, name='homepage'),
    path('requester/',views.requester, name='requester'),
    path('request/',views.request, name='request'),
-   path('products/',views.products, name='products'),
-   path('status/',views.status, name='status'),
    path('register/',views.register, name='register'),
    path('forgot/',views.forgot, name='forgot'),
    path('reset/',views.reset, name='reset'),
    path('login/',views.login, name='login'),
-   path('notification/',views.notification, name='notification'),
+   path('notif/',views.notification, name='notification'),
    path('tracker/',views.tracker, name='tracker'),
    path('verify/',views.verify, name='verify'),
    path('about/',views.about, name='about'),
@@ -28,6 +25,7 @@ urlpatterns = [
    path('supply_office/home/', views.supply_office_home,name='supply_office_home'),
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
-   path('get-notifications/', get_notifications, name='get_notifications'),
-   path('api/get-notifications/', views.get_notifications, name='get_notifications'),
+   path('supply_office/about/', views.supply_office_about,name='supply_office_about'),
+   path('supply_office/inventory/', views.supply_office_inventory,name='supply_office_inventory'),
+   
 ]

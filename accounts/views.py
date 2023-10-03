@@ -5,50 +5,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
-from django.http import JsonResponse
-from .models import Notification
-from django.shortcuts import render
-from .forms import ItemForm
-
-# Create your views here.
-
-def home(request):
-    requester = Requester.objects.all()
-    status = Status.objects.all()
-    total_requester = requester.count()
-    total_status = status.count()
-    approved = status.filter(status='Approved').count()
-    pending = status.filter(status='Pending').count()
-    declined = status.filter(status='Declined').count()
-
-    context = {
-        'requester': requester, 
-        'status': status, 
-        'total_requester': total_requester,
-        'total_status': total_status,
-        'approved': approved,
-        'pending': pending,
-        'declined': declined
-        }
-    return render(request, 'accounts/User/dashboard.html', context)   
+  
 
 
 def requester(request,):
-    requester = Requester.objects.all()
-    context= {
-        'requester': requester, 
-        'products': products
-        }
-    return render(request, 'accounts/User/requester.html', context)
-
-
-def products(request):
-    products = Products.objects.all()   
-    return render(request, 'accounts/User/products.html', {'products': products})
-
-
-def status(request):
-    return render(request, 'accounts/User/status.html') 
+    return render(request, 'accounts/User/requester.html')
 
 
 def homepage(request):
@@ -56,33 +17,29 @@ def homepage(request):
 
 
 def register(request):
-    if request.method != "POST":
-        return render(request, 'accounts/User/register.html')
-    username = request.POST['username']
-    fname = request.POST['fname']
-    lname = request.POST['lname']
-    email = request.POST['email']
-    contact1 = request.POST['contact1']
-    contact2 = request.POST['contact2']
-    pass1 = request.POST['pass1']
-    pass2 = request.POST['pass2']
+    if request.method == "POST":
+        username = request.POST['username']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        email = request.POST['email']
+        contact1 = request.POST['contact1']
+        contact2 = request.POST['contact2']
+        pass1 = request.POST['pass1']
+        pass2 = request.POST['pass2']
+        
+        if pass1 != pass2:
+            raise ValueError("password not match.")
+        
+        myuser = User.objects.create_user(username, email, pass1)
+        myuser.first_name = fname
+        myuser.last_name = lname
+        
+        myuser.save()
+        messages.success(request, "Your account is successfully created.")
+        
+        return redirect('login')
+    return render(request, 'accounts/User/register.html')
 
-    if pass1 != pass2:
-        raise ValueError("password not match.")
-
-    myuser = User.objects.create_user(username, email, pass1)
-    myuser.first_name = fname
-    myuser.last_name = lname
-
-    myuser.save()
-
-    # Display a success message if the user is successfully registered
-    messages.success(request, "Your account is successfully created.")
-
-    return redirect('login')
-
-
-from django.contrib.auth import login as auth_login
 
 def login(request):
     if request.method == 'POST':
@@ -133,6 +90,9 @@ def profile(request):
     return render(request, 'accounts/User/profile.html')
 
 
+def signout(request):
+    pass
+
 def cash(request):
     return render(request, 'accounts/Admin/Accounting/cash.html')
 
@@ -161,28 +121,40 @@ def supply_office_notification(request):
 def supply_office_history(request):
     return render(request, 'accounts/Admin/Supply_office/history.html')
 
+def supply_office_about(request):
+    return render(request, 'accounts/Admin/Supply_office/about.html')
 
-
-def create_notification(user, message):
-    Notification.objects.create(user=user, message=message)
-    
-    
-def get_notifications(request):
-    user = request.user  # Assuming you're using the built-in User model
-    notifications = Notification.objects.filter(user=user, is_read=False)
-    notifications_data = [{'message': n.message, 'timestamp': n.timestamp} for n in notifications]
-    return JsonResponse({'notifications': notifications_data})
-
-
+def supply_office_inventory(request):
+    return render(request, 'accounts/Admin/Supply_office/inventory.html')
+# views.py
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Item
 
 def request(request):
-    if request.method == 'POST':
-        form = ItemForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # You can add a success message or redirect to a different page
-            return redirect('success_view_name')  # Replace 'success_view_name' with your success view name
-    else:
-        form = ItemForm()
+    
+    if request.method == "POST":
+        
 
-    return render(request, 'accounts/User/requester.html', {'form': form})
+        name = request.POST.get('item_name[]', '')
+        description = request.POST.get('item_description[]', '')
+        unit = request.POST.get('item_unit[]', '')
+        quantity = request.POST.get('item_quantity[]', 0)
+        price = request.POST.get('item_price[]', 0)
+        department = request.POST.get('department')
+        purpose= request.POST.get('item_purpose', '')
+        
+        # Assuming you have a logged-in user
+        user = request.user
+
+        print('ganagana')
+
+        # Create and save the item
+        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
+        item.save()
+        print('ganahin')
+        
+        messages.success(request, "Item added successfully.")
+        
+        return redirect('request')  # Redirect to the same page after submission
+    return render(request, 'accounts/User/requester.html')
