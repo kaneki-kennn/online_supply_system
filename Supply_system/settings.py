@@ -77,32 +77,31 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # defaultdb
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
-    }
-}
 
-#shiela database
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'djongo',
 #         'NAME': 'inventorydb',
+#         'HOST': 'localhost',
+#         'PORT': 27017,
+
+
 #     }
 # }
 
-# # jelyn database
-# DATABASES = {
-# 'default': {
-#       'ENGINE': 'djongo',
-#       'NAME':  'mydatabase',  
-#       'USERNAME': 'lalyang',
-#       'PASSWORD': 'lalyang123',
-#       'HOST': 'localhost',
-#       'PORT': 27017,
-#       }
-# # }
+# jelyn database
+DATABASES = {
+'default': {
+      'ENGINE': 'djongo',
+      'NAME':  'mydatabase',  
+      'USERNAME': 'lalyang',
+      'PASSWORD': 'lalyang123',
+      'HOST': 'localhost',
+      'PORT': 27017,
+      }
+}
 # =======
 #  'default': {
 #         'ENGINE': 'djongo',
