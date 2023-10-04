@@ -22,7 +22,7 @@
   padding: 19px 40px;
   padding-right: 60px;
   border-style: solid;
-  border-width: 2px;
+  border-width: 3px;
   left: 480px;
   top: 160px;
 }
@@ -33,7 +33,7 @@
   background: rgba(0, 178, 248, 0.26);
   border-style: solid;
   border-color: #000000;
-  border-width: 3px;
+  border-width: 2px;
   width: 854.2px;
   height:40px;
   position: relative;
@@ -46,7 +46,7 @@
   background: rgba(0, 178, 248, 0.26);
   border-style: solid;
   border-color: #000000;
-  border-width: 3px;
+  border-width: 2px;
   width: 855px;
   height: 439px;
   position: absolute;
@@ -58,10 +58,10 @@
 .department{
   color: #000000;
   text-align: left;
-  font: 750 21px "Source Sans Pro", sans-serif;
+  font: 400 17px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 45.95px;
-  top: 105px;
+  top: 115px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -70,10 +70,10 @@
 .purpose {
   color: #000000;
   text-align: left;
-  font: 750 21px "Source Sans Pro", sans-serif;
+  font: 400 17px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 45.95px;
-  top: 178px;
+  top: 182px;
   width: 417.28px;
   height: 72.89px;
 }
