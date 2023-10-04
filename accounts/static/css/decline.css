@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .container,
+.container * {
+  box-sizing: border-box;
+}
+
+
+.container {
+  position: absolute;
+  width: 650px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.486);
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.37);
+  color: #003566;
+  padding: 19px 40px;
+  padding-right: 60px;
+  left: 610px;
+  top: 280px;
+}
+
+.frame{
+    background: rgba(255, 255, 255, 0.486);
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1.5px;
+    width: 550px;
+    height: 180px;
+    position: absolute;
+    left: 47px;
+    top: 180px;
+  }
+
+.message{
+    text-align: center;
+    font-size: 15px;
+}
+
+.send_icon{
+  position: relative;
+  overflow: visible;
+}
+
+
+.send {
+  position: absolute; 
+  top: 550px;
+  left: 755px;
+}

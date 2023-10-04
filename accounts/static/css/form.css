@@ -23,7 +23,7 @@
   padding-right: 60px;
   border-style: solid;
   border-width: 3px;
-  left: 480px;
+  left: 485px;
   top: 160px;
 }
 
@@ -316,7 +316,6 @@
 
 
 .decline {
-  color: red;
   position: absolute; 
   top: 550px;
   left: 755px;
