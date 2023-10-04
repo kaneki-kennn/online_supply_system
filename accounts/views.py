@@ -7,11 +7,6 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
   
 
-
-def requester(request,):
-    return render(request, 'accounts/User/requester.html')
-
-
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
@@ -158,12 +153,15 @@ def supply_office_inventory(request):
 
 def notice_of_reward(request):
     return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+
+def bac(request):
+    return render(request, 'accounts/Admin/BAC/bac.html')
 # views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Item
 
-def request(request):
+def requester(request):
     
     if request.method == "POST":
         
@@ -190,3 +188,5 @@ def request(request):
         
         return redirect('request')  # Redirect to the same page after submission
     return render(request, 'accounts/User/requester.html')
+
+
