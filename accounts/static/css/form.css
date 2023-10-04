@@ -30,7 +30,7 @@
 .column {
   margin: 0;
   padding: 0;
-  background: rgba(0, 53, 102, 0.5);
+  background: rgba(0, 178, 248, 0.26);
   border-style: solid;
   border-color: #000000;
   border-width: 3px;
@@ -43,7 +43,7 @@
 
 
 .frame{
-  background: rgba(0, 53, 102, 0.5);
+  background: rgba(0, 178, 248, 0.26);
   border-style: solid;
   border-color: #000000;
   border-width: 3px;
@@ -300,4 +300,38 @@
   top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
+}
+
+
+.icon,
+.icon * {
+  box-sizing: border-box;
+}
+
+
+.icon1{
+  position: relative;
+  overflow: visible;
+}
+
+
+.decline {
+  color: red;
+  position: absolute; 
+  top: 550px;
+  left: 755px;
+}
+
+
+.icon2{
+  position: relative;
+  overflow: visible;
+}
+
+
+.accept {
+  color: green;
+  position: absolute; 
+  top: 550px;
+  left: 825px;
 }
