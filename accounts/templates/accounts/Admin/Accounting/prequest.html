@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="{% static 'css/main.css' %}">
-      <link rel="stylesheet" href="{% static 'css/prequest.css' %}">
+      <link rel="stylesheet" href="{% static 'css/cash.css' %}">
 
   </head>
   <body>
@@ -41,12 +41,10 @@
           <div class="d-flex flex-wrap align-content-between h-100">
             <div class="bg-white w-100" id="sidebar-wrapper">
               <div class="list-group w-100">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'cash' %}">Cash Disbursement</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'home_cash' %}">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'cash_disbursement' %}">Cash Disbursement</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'prequest' %}">Purchase Request</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about_cash' %}">About Us</a>
               </div>
             </div>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
@@ -57,7 +55,7 @@
     
         <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
-            <h1> <img class="notiff" src="{% static 'images/bell.png' %}" alt="">PURCHASE REQUEST</h1>
+            <h1> <img class="notiff" alt="">PURCHASE REQUEST</h1>
           </div>
 
           <div class="column">

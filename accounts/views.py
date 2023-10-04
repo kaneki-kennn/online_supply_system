@@ -98,8 +98,17 @@ def pro_file_html(request):
 def signout(request):
     pass
 
-def cash(request):
-    return render(request, 'accounts/Admin/Accounting/cash.html')
+def about_cash(request):
+    return render(request, 'accounts/Admin/Accounting/about_cash.html')
+
+def cash_disbursement(request):
+    return render(request, 'accounts/Admin/Accounting/cash_disbursement.html')
+
+def home_cash(request):
+    return render(request, 'accounts/Admin/Accounting/home_cash.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
 
 def form(request):
     return render(request, 'accounts/Admin/Accounting/form.html')
