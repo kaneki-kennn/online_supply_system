@@ -112,6 +112,13 @@ def form(request):
 def decline(request):
     return render(request, 'accounts/Admin/Accounting/decline.html')
 
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
+
+
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
 
