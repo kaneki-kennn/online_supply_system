@@ -35,15 +35,33 @@
   border-color: #000000;
   border-width: 2px;
   width: 854.2px;
-  height:40px;
+  height: 43px;
   position: relative;
   right: 20px;
   top: 25px;
 }
 
 
+.column {
+  display: flex;
+}
+
+
+.column_1, .column_2 {
+  flex: 1;
+  margin-right: 5px; /* Add spacing between the fields */
+}
+
+
+label {
+  display: inline-block;
+  width: 20px; /* Adjust the width as needed */
+}
+
+
+
 .frame{
-  background: rgba(0, 178, 248, 0.26);
+  background: rgba(0, 178, 248, 0.205);
   border-style: solid;
   border-color: #000000;
   border-width: 2px;

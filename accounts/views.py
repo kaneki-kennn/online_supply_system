@@ -107,9 +107,6 @@ def cash_disbursement(request):
 def home_cash(request):
     return render(request, 'accounts/Admin/Accounting/home_cash.html')
 
-def prequest(request):
-    return render(request, 'accounts/Admin/Accounting/prequest.html')
-
 def form(request):
     return render(request, 'accounts/Admin/Accounting/form.html')
 
@@ -121,7 +118,6 @@ def notice_of_reward(request):
 
 def prequest(request):
     return render(request, 'accounts/Admin/Accounting/prequest.html')
-
 
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')

@@ -24,7 +24,6 @@ urlpatterns = [
    path('prequest/',views.prequest, name='prequest'),
    path('form/',views.form, name='form'),
    path('decline/',views.decline, name='decline'),
-   path('prequest/',views.prequest, name='prequest'),
    path('notice_of_reward/',views.notice_of_reward, name='notice_of_reward'),
    path('campus_director/requester/', views.campus_director_requester,name='campusD_requester'),
    path('campus_director/notification/', views.campus_director_notification,name='campusD_notification'),
