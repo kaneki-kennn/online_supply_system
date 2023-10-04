@@ -20,7 +20,7 @@
 .frame {
     
     background-image: url("/static/images/school.png");
-    background-size: 1773px 1080px;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 1773px;
     height: 1080px;

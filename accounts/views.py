@@ -7,11 +7,6 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
   
 
-
-def requester(request,):
-    return render(request, 'accounts/User/requester.html')
-
-
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
@@ -137,8 +132,8 @@ def campus_director_notification(request):
 def campus_director_resolution(request):
     return render(request, 'accounts/Admin/campusD/resolution.html')
 
-def campus_director_history(request):
-    return render(request, 'accounts/Admin/campusD/history.html')
+def campus_director_historycd(request):
+    return render(request, 'accounts/Admin/campusD/historycd.html')
 
 def campus_director_about(request):
     return render(request, 'accounts/Admin/campusD/about.html')
@@ -147,6 +142,12 @@ def supply_office_home(request):
     return render(request, 'accounts/Admin/Supply_office/home.html')
 
 
+def home(request):
+    return render(request, 'accounts/Accounting/home.html')
+
+
+def signout(request):
+    pass
 def supply_office_notification(request):
     return render(request, 'accounts/Admin/Supply_office/notification.html')
 
@@ -161,23 +162,38 @@ def supply_office_inventory(request):
 
 def notice_of_reward(request):
     return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
-# views.py
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .models import Item
 
-def request(request):
+def bac(request):
+    return render(request, 'accounts/Admin/BAC/bac.html')
+
+
+department_mapping = {
+    'option1': 'College of Arts and Sciences',
+    'option2': 'College of Agriculture',
+    'option3': 'College of Forestry',
+    'option4': 'College of Hospitality Management and Tourism',
+    'option5': 'College of Technology and Engineering',
+    'option6': 'College of Education',
+    'option7': 'Graduate School',
+}
+
+
+def requester(request):
     
     if request.method == "POST":
         
 
         name = request.POST.get('item_name[]', '')
         description = request.POST.get('item_description[]', '')
-        unit = request.POST.get('item_unit[]', '')
-        quantity = request.POST.get('item_quantity[]', 0)
-        price = request.POST.get('item_price[]', 0)
-        department = request.POST.get('department')
+        quantity = int(request.POST.get('quantity[]', 0))
+        unit_price = float(request.POST.get('unit_price[]', 0))
         purpose= request.POST.get('item_purpose', '')
+        department_option = request.POST.get('departmentDropdown', '')  # Get the selected department option
+
+        # Map the selected option to the department name
+        department_name = department_mapping.get(department_option, '')
+
+        purpose = request.POST.get('item_purpose', '')
         
         # Assuming you have a logged-in user
         user = request.user
@@ -185,11 +201,13 @@ def request(request):
         print('ganagana')
 
         # Create and save the item
-        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
+        item = Item(user=user, name=name, description=description, quantity=quantity, unit_price=unit_price, department=department_name, purpose=purpose)
         item.save()
         print('ganahin')
         
         messages.success(request, "Item added successfully.")
         
-        return redirect('request')  # Redirect to the same page after submission
+        return redirect('requester')  # Redirect to the same page after submission
     return render(request, 'accounts/User/requester.html')
+
+

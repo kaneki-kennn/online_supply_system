@@ -5,7 +5,6 @@ from . import views
 urlpatterns = [
    path('',views.homepage, name='homepage'),
    path('requester/',views.requester, name='requester'),
-   path('request/',views.request, name='request'),
    path('register/',views.register, name='register'),
    path('forgot/',views.forgot, name='forgot'),
    path('reset/',views.reset, name='reset'),
@@ -30,7 +29,7 @@ urlpatterns = [
    path('campus_director/requester/', views.campus_director_requester,name='campusD_requester'),
    path('campus_director/notification/', views.campus_director_notification,name='campusD_notification'),
    path('campus_director/resolution/', views.campus_director_resolution,name='campusD_resolution'),
-   path('campus_director/history/', views.campus_director_history,name='campusD_history'),
+   path('campus_director/historycd/', views.campus_director_historycd,name='campusD_historycd'),
    path('campus_director/about/', views.campus_director_about,name='campusD_about'),
    path('supply_office/home/', views.supply_office_home,name='supply_office_home'),
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
@@ -38,4 +37,5 @@ urlpatterns = [
    path('supply_office/about/', views.supply_office_about,name='supply_office_about'),
    path('supply_office/inventory/', views.supply_office_inventory,name='supply_office_inventory'),
    path('notice_of_reward/',views.notice_of_reward, name='notice_of_reward'),  
+   path('bac/',views.bac, name='bac'),
 ]
