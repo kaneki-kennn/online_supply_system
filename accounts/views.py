@@ -139,8 +139,8 @@ def campus_director_notification(request):
 def campus_director_resolution(request):
     return render(request, 'accounts/Admin/campusD/resolution.html')
 
-def campus_director_history(request):
-    return render(request, 'accounts/Admin/campusD/history.html')
+def campus_director_historycd(request):
+    return render(request, 'accounts/Admin/campusD/historycd.html')
 
 def campus_director_about(request):
     return render(request, 'accounts/Admin/campusD/about.html')

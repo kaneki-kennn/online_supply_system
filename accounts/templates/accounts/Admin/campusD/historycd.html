@@ -43,7 +43,7 @@
                       <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_notification' %}">Home</a>
                       <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_requester' %}">Purchase Request</a>
                       <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_resolution' %}">Resolution</a>
-                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_history' %}">History</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_historycd' %}">History</a>
                       <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_about' %}">About Us</a>
                     </div>
                   </div>
@@ -61,17 +61,17 @@
           <div class="container" style=" display: inline-flex; margin: 3; flex-direction: column;">
             <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
               <i class="fa fa-circle px-3" aria-hidden="true" style="color: green;"></i>
-              <strong>Successful Requests</strong>
+              <strong>Approved Requests/Resolution</strong>
             </div>
             <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
               <i class="fa fa-circle px-3" aria-hidden="true" style="color: red;"></i>
-              <strong>Failed Requests</strong>
+              <strong>Declined Requests/Resolution</strong>
             </div>
           </div>
           <div class="row w-100 m-auto border text-center text-danger">
             <div class="col-4">
               <p>
-                Purchase Request No. 000001
+                Purchase Request No. 0000003
               </p>
             </div>
             <div class="col-3">
@@ -91,7 +91,7 @@
           <div class="row w-100 m-auto border text-center text-success">
             <div class="col-4">
               <p>
-                Purchase Request No. 000002
+                Purchase Request No. 0000003
               </p>
             </div>
             <div class="col-3">
