@@ -5,45 +5,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
-
-
-def home(request):
-    requester = Requester.objects.all()
-    status = Status.objects.all()
-    total_requester = requester.count()
-    total_status = status.count()
-    approved = status.filter(status='Approved').count()
-    pending = status.filter(status='Pending').count()
-    declined = status.filter(status='Declined').count()
-
-    context = {
-        'requester': requester, 
-        'status': status, 
-        'total_requester': total_requester,
-        'total_status': total_status,
-        'approved': approved,
-        'pending': pending,
-        'declined': declined
-        }
-    return render(request, 'accounts/User/dashboard.html', context)   
+  
 
 
 def requester(request,):
-    requester = Requester.objects.all()
-    context= {
-        'requester': requester, 
-        'products': products
-        }
-    return render(request, 'accounts/User/requester.html', context)
-
-
-def products(request):
-    products = Products.objects.all()   
-    return render(request, 'accounts/User/products.html', {'products': products})
-
-
-def status(request):
-    return render(request, 'accounts/User/status.html') 
+    return render(request, 'accounts/User/requester.html')
 
 
 def homepage(request):
@@ -119,16 +85,39 @@ def tracker(request):
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
+def pro_file(request):
+    return render(request, 'accounts/User/pro_file.html')
 
 def profile(request):
     return render(request, 'accounts/User/profile.html')
 
+def profile_html(request):
+    return render(request, 'profile.html')
+
+def notification_html(request):
+    return render(request, 'notification.html')
+
+def pro_file_html(request):
+    return render(request, 'pro_file.html')
 
 def signout(request):
     pass
 
 def cash(request):
     return render(request, 'accounts/Admin/Accounting/cash.html')
+
+def form(request):
+    return render(request, 'accounts/Admin/Accounting/form.html')
+
+def decline(request):
+    return render(request, 'accounts/Admin/Accounting/decline.html')
+
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
+
 
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
@@ -163,3 +152,41 @@ def supply_office_history(request):
 
 def supply_office_about(request):
     return render(request, 'accounts/Admin/Supply_office/about.html')
+
+def supply_office_inventory(request):
+    return render(request, 'accounts/Admin/Supply_office/inventory.html')
+
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+# views.py
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Item
+
+def request(request):
+    
+    if request.method == "POST":
+        
+
+        name = request.POST.get('item_name[]', '')
+        description = request.POST.get('item_description[]', '')
+        unit = request.POST.get('item_unit[]', '')
+        quantity = request.POST.get('item_quantity[]', 0)
+        price = request.POST.get('item_price[]', 0)
+        department = request.POST.get('department')
+        purpose= request.POST.get('item_purpose', '')
+        
+        # Assuming you have a logged-in user
+        user = request.user
+
+        print('ganagana')
+
+        # Create and save the item
+        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
+        item.save()
+        print('ganahin')
+        
+        messages.success(request, "Item added successfully.")
+        
+        return redirect('request')  # Redirect to the same page after submission
+    return render(request, 'accounts/User/requester.html')
