@@ -28,7 +28,7 @@
               <h1 class="p1">Cebu Technological University - Argao Campus</h1>
             </div>
             <div>
-              <a href="{% url 'profile' %}">
+              <a href="{% url 'pro_file' %}">
                 <img class="profile_img" src="{% static 'images/profile_default_image.png' %}" alt="">
               </a>
             <div>
@@ -91,6 +91,7 @@
             <div class="col-2" onclick="red()">
               <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
+            
           </div>
           <div class="row w-100 m-auto border text-center text-success">
             <div class="col-4">
@@ -130,12 +131,12 @@
                     <div class="row w-100 m-auto border text-start p-0 text-dark ">
                       <div class="col-6 border">
                         <p>
-                          PR ID:
+                          Office/ Section:
                         </p>
                       </div>
                       <div class="col-6 border text-dark text-start">
                         <p>
-                          Requester ID:
+                          PR No.: 0000002
                         </p>
                       </div>
                   </div>
@@ -156,21 +157,23 @@
                   <table class="table table-bordered table-responsive" id="itemTable">
                     <thead>
                         <tr>
-                            <th class="">Item No.</th>
-                            <th class="">Item Name</th>
-                            <th class="">Item Brand/Description</th>
+                            <th class="">Stock/ Property No.</th>
                             <th class="">Unit</th>
+                            <th class="">Item Brand/Description</th>
                             <th class="">Quantity</th>
-                            <th class="">Price</th>
+                            <th class="">Unit Cost</th>
+                            <th class="">Total Cost</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+              
                     </tbody>
                 </table>
                 <div 
@@ -262,4 +265,9 @@ function calculateTotalAmount(requests) {
 }
 
     </script>
+
+    </html>
+
+
 </html>
+

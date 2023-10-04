@@ -5,12 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
-
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .models import Item
   
-
 
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
@@ -85,16 +80,48 @@ def tracker(request):
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
+def pro_file(request):
+    return render(request, 'accounts/User/pro_file.html')
 
 def profile(request):
     return render(request, 'accounts/User/profile.html')
 
+def profile_html(request):
+    return render(request, 'profile.html')
+
+def notification_html(request):
+    return render(request, 'notification.html')
+
+def pro_file_html(request):
+    return render(request, 'pro_file.html')
 
 def signout(request):
     pass
 
-def cash(request):
-    return render(request, 'accounts/Admin/Accounting/cash.html')
+def about_cash(request):
+    return render(request, 'accounts/Admin/Accounting/about_cash.html')
+
+def cash_disbursement(request):
+    return render(request, 'accounts/Admin/Accounting/cash_disbursement.html')
+
+def home_cash(request):
+    return render(request, 'accounts/Admin/Accounting/home_cash.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
+
+def form(request):
+    return render(request, 'accounts/Admin/Accounting/form.html')
+
+def decline(request):
+    return render(request, 'accounts/Admin/Accounting/decline.html')
+
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
+
 
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
@@ -105,8 +132,8 @@ def campus_director_notification(request):
 def campus_director_resolution(request):
     return render(request, 'accounts/Admin/campusD/resolution.html')
 
-def campus_director_history(request):
-    return render(request, 'accounts/Admin/campusD/history.html')
+def campus_director_historycd(request):
+    return render(request, 'accounts/Admin/campusD/historycd.html')
 
 def campus_director_about(request):
     return render(request, 'accounts/Admin/campusD/about.html')
@@ -115,6 +142,12 @@ def supply_office_home(request):
     return render(request, 'accounts/Admin/Supply_office/home.html')
 
 
+def home(request):
+    return render(request, 'accounts/Accounting/home.html')
+
+
+def signout(request):
+    pass
 def supply_office_notification(request):
     return render(request, 'accounts/Admin/Supply_office/notification.html')
 
@@ -126,6 +159,12 @@ def supply_office_about(request):
 
 def supply_office_inventory(request):
     return render(request, 'accounts/Admin/Supply_office/inventory.html')
+
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+
+def bac(request):
+    return render(request, 'accounts/Admin/BAC/bac.html')
 
 
 department_mapping = {
@@ -170,3 +209,5 @@ def requester(request):
         
         return redirect('requester')  # Redirect to the same page after submission
     return render(request, 'accounts/User/requester.html')
+
+
