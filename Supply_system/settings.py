@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.template',
     'accounts',
     'djongo',
+    'notification',
 ]
 
 MIDDLEWARE = [

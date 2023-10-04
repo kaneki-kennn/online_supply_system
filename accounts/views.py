@@ -158,3 +158,13 @@ def request(request):
         
         return redirect('request')  # Redirect to the same page after submission
     return render(request, 'accounts/User/requester.html')
+
+
+from django.http import HttpResponseRedirect
+
+def send_notification(request):
+    user = request.user
+    message = request.POST.get('message')
+    notification = notification(user=user, message=message)
+    notification.save()
+    return HttpResponseRedirect('/')

@@ -186,3 +186,11 @@
       }
     </script>
 </html>
+
+
+{% for notification in notifications %}
+    <div class="notification">
+        <p>{{ notification.message }}</p>
+        <p>{{ notification.created_at }}</p>
+    </div>
+{% endfor %}

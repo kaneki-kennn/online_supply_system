@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views 
+from notifications import send_notification
 
 
 urlpatterns = [
@@ -27,5 +28,5 @@ urlpatterns = [
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
    path('supply_office/about/', views.supply_office_about,name='supply_office_about'),
    path('supply_office/inventory/', views.supply_office_inventory,name='supply_office_inventory'),
-   
+   path('send_notification/', send_notification, name='send_notification'),
 ]
