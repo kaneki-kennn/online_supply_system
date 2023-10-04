@@ -22,7 +22,7 @@
   padding: 19px 40px;
   padding-right: 60px;
   border-style: solid;
-  border-width: 2px;
+  border-width: 3px;
   left: 480px;
   top: 160px;
 }
@@ -30,10 +30,10 @@
 .column {
   margin: 0;
   padding: 0;
-  background: rgba(0, 53, 102, 0.5);
+  background: rgba(0, 178, 248, 0.26);
   border-style: solid;
   border-color: #000000;
-  border-width: 3px;
+  border-width: 2px;
   width: 854.2px;
   height:40px;
   position: relative;
@@ -43,10 +43,10 @@
 
 
 .frame{
-  background: rgba(0, 53, 102, 0.5);
+  background: rgba(0, 178, 248, 0.26);
   border-style: solid;
   border-color: #000000;
-  border-width: 3px;
+  border-width: 2px;
   width: 855px;
   height: 439px;
   position: absolute;
@@ -58,10 +58,10 @@
 .department{
   color: #000000;
   text-align: left;
-  font: 750 21px "Source Sans Pro", sans-serif;
+  font: 400 17px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 45.95px;
-  top: 105px;
+  top: 115px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -70,10 +70,10 @@
 .purpose {
   color: #000000;
   text-align: left;
-  font: 750 21px "Source Sans Pro", sans-serif;
+  font: 400 17px "Source Sans Pro", sans-serif;
   position: absolute;
   left: 45.95px;
-  top: 178px;
+  top: 182px;
   width: 417.28px;
   height: 72.89px;
 }
@@ -300,4 +300,38 @@
   top: 225px;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
+}
+
+
+.icon,
+.icon * {
+  box-sizing: border-box;
+}
+
+
+.icon1{
+  position: relative;
+  overflow: visible;
+}
+
+
+.decline {
+  color: red;
+  position: absolute; 
+  top: 550px;
+  left: 755px;
+}
+
+
+.icon2{
+  position: relative;
+  overflow: visible;
+}
+
+
+.accept {
+  color: green;
+  position: absolute; 
+  top: 550px;
+  left: 825px;
 }

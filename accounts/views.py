@@ -7,11 +7,6 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
   
 
-
-def requester(request,):
-    return render(request, 'accounts/User/requester.html')
-
-
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
@@ -85,22 +80,48 @@ def tracker(request):
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
+def pro_file(request):
+    return render(request, 'accounts/User/pro_file.html')
 
 def profile(request):
     return render(request, 'accounts/User/profile.html')
 
+def profile_html(request):
+    return render(request, 'profile.html')
+
+def notification_html(request):
+    return render(request, 'notification.html')
+
+def pro_file_html(request):
+    return render(request, 'pro_file.html')
 
 def signout(request):
     pass
 
-def cash(request):
-    return render(request, 'accounts/Admin/Accounting/cash.html')
+def about_cash(request):
+    return render(request, 'accounts/Admin/Accounting/about_cash.html')
+
+def cash_disbursement(request):
+    return render(request, 'accounts/Admin/Accounting/cash_disbursement.html')
+
+def home_cash(request):
+    return render(request, 'accounts/Admin/Accounting/home_cash.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
 
 def form(request):
     return render(request, 'accounts/Admin/Accounting/form.html')
 
 def decline(request):
     return render(request, 'accounts/Admin/Accounting/decline.html')
+
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
+
+def prequest(request):
+    return render(request, 'accounts/Admin/Accounting/prequest.html')
+
 
 def campus_director_requester(request):
     return render(request, 'accounts/Admin/campusD/requester.html')
@@ -111,8 +132,8 @@ def campus_director_notification(request):
 def campus_director_resolution(request):
     return render(request, 'accounts/Admin/campusD/resolution.html')
 
-def campus_director_history(request):
-    return render(request, 'accounts/Admin/campusD/history.html')
+def campus_director_historycd(request):
+    return render(request, 'accounts/Admin/campusD/historycd.html')
 
 def campus_director_about(request):
     return render(request, 'accounts/Admin/campusD/about.html')
@@ -121,6 +142,12 @@ def supply_office_home(request):
     return render(request, 'accounts/Admin/Supply_office/home.html')
 
 
+def home(request):
+    return render(request, 'accounts/Accounting/home.html')
+
+
+def signout(request):
+    pass
 def supply_office_notification(request):
     return render(request, 'accounts/Admin/Supply_office/notification.html')
 
@@ -133,24 +160,40 @@ def supply_office_about(request):
 def supply_office_inventory(request):
     return render(request, 'accounts/Admin/Supply_office/inventory.html')
 
+def notice_of_reward(request):
+    return render(request, 'accounts/Admin/Accounting/notice_of_reward.html')
 
-# views.py
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .models import Item
+def bac(request):
+    return render(request, 'accounts/Admin/BAC/bac.html')
 
-def request(request):
+
+department_mapping = {
+    'option1': 'College of Arts and Sciences',
+    'option2': 'College of Agriculture',
+    'option3': 'College of Forestry',
+    'option4': 'College of Hospitality Management and Tourism',
+    'option5': 'College of Technology and Engineering',
+    'option6': 'College of Education',
+    'option7': 'Graduate School',
+}
+
+
+def requester(request):
     
     if request.method == "POST":
         
 
         name = request.POST.get('item_name[]', '')
         description = request.POST.get('item_description[]', '')
-        unit = request.POST.get('item_unit[]', '')
-        quantity = request.POST.get('item_quantity[]', 0)
-        price = request.POST.get('item_price[]', 0)
-        department = request.POST.get('department')
+        quantity = int(request.POST.get('quantity[]', 0))
+        unit_price = float(request.POST.get('unit_price[]', 0))
         purpose= request.POST.get('item_purpose', '')
+        department_option = request.POST.get('departmentDropdown', '')  # Get the selected department option
+
+        # Map the selected option to the department name
+        department_name = department_mapping.get(department_option, '')
+
+        purpose = request.POST.get('item_purpose', '')
         
         # Assuming you have a logged-in user
         user = request.user
@@ -158,11 +201,13 @@ def request(request):
         print('ganagana')
 
         # Create and save the item
-        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
+        item = Item(user=user, name=name, description=description, quantity=quantity, unit_price=unit_price, department=department_name, purpose=purpose)
         item.save()
         print('ganahin')
         
         messages.success(request, "Item added successfully.")
         
-        return redirect('request')  # Redirect to the same page after submission
+        return redirect('requester')  # Redirect to the same page after submission
     return render(request, 'accounts/User/requester.html')
+
+

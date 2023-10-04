@@ -18,38 +18,42 @@
 
   </head>
 <body>
+  
+  <div class="container">
+    <div class="column">PR ID: 0000003 Requester ID: 7210861</div>
+    <div class="frame"></div>
+    <div class="department">Department: ________________________</div>
+    <div class="purpose">Purpose: ___________________________</div>
+    <div class="item-no">Item No.</div>
+    <div class="item-brand">Item Brand/<br />Description</div>
+    <div class="unit">Unit</div>
+    <div class="quantity">Quantity</div>
+    <div class="price">Price</div>
+    <div class="total-amount">Total Amount:</div>
+    <div class="item">Item</div>
+    <div class="line-50"></div>
+    <div class="line-40"></div>
+    <div class="line-41"></div>
+    <div class="line-43"></div>
+    <div class="line-44"></div>
+    <div class="line-42"></div>
+    <div class="line-45"></div>
+    <div class="line-48"></div>
+    <div class="line-49"></div>
+    <div class="line-46"></div>
+    <div class="line-47"></div>
 
-    <div class="container">
-        <div class="column">PR ID: 0000003 Requester ID: 7210861</div>
-        <div class="frame"></div>
-        <div class="department">Department: ________________________</div>
-        <div class="purpose">Purpose: ___________________________</div>
-        <div class="item-no">Item No.</div>
-        <div class="item-brand">Item Brand/<br />Description</div>
-        <div class="unit">Unit</div>
-        <div class="quantity">Quantity</div>
-        <div class="price">Price</div>
-        <div class="total-amount">Total Amount:</div>
-        <div class="item">Item</div>
-        <div class="line-50"></div>
-        <div class="line-40"></div>
-        <div class="line-41"></div>
-        <div class="line-43"></div>
-        <div class="line-44"></div>
-        <div class="line-42"></div>
-        <div class="line-45"></div>
-        <div class="line-48"></div>
-        <div class="line-49"></div>
-        <div class="line-46"></div>
-        <div class="line-47"></div>
-      </div>
+    <div class="icon-2">
+      <a href="{% url 'decline' %}">
+        <img class="decline" src="{% static 'images/close.png' %}" alt="">
+      </a>
+    </div>
+    
 
-      <div class="icon">
-        <img class="{% url 'decline' %}" src="{% static 'images/decline.png' %}" alt="">
-      </div>
+    <div class="icon-2">
+      <img class="accept" src="{% static 'images/accept.png' %}" alt="">
+    </div>
 
-      <div class="icon-1">
-        <img class="id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" src="{% static 'images/accept.png' %}" alt="">
-      </div>
+  </div>
 
 </body>
